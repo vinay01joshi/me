@@ -48,10 +48,11 @@
                 <h1 class="name">Vinay Joshi</h1>
                 <h2 class="desc">Full Stack Developer</h2>
                 <ul class="social list-inline">
-                    <li><a href="https://twitter.com/vinay01joshi"><i class="fa fa-twitter"></i></a></li>                    
+                    <li><a href="https://twitter.com/vinay01joshi"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="https://www.linkedin.com/in/joshi-vinay/"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://github.com/vinay01joshi"><i class="fa fa-github-alt"></i></a></li>
-                    <li class="last-item"><a href="https://www.youtube.com/@vinjo.skills"><i class="fa fa-youtube"></i></a></li>
+                    <li class="last-item"><a href="https://www.youtube.com/@vinjo.skills"><i
+                                class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
             <!--//profile-->
@@ -175,7 +176,8 @@
                             <div class="item">
                                 <h3 class="title">Sr Software Engineer - <span class="place"><a
                                             href="https://www.unitedhealthgroup.com/">United Helth Group</a></span>
-                                    <span class="year">(2018 - Present)</span></h3>
+                                    <span class="year">(2018 - Present)</span>
+                                </h3>
                                 <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
                                     ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus
                                     varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
@@ -195,7 +197,8 @@
                             <div class="item">
                                 <h3 class="title">Software Engineer - <span class="place"><a
                                             href="https://nextgeninvent.com/">Next Gen Invent Coprporation</a></span>
-                                    <span class="year">(2011 - 2014)</span></h3>
+                                    <span class="year">(2011 - 2014)</span>
+                                </h3>
                                 <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
                                     adipiscing sem neque sed ipsum.</p>
                             </div>
@@ -214,18 +217,18 @@
                                 href="https://github.com/IonicaBizau/github-calendar" target="_blank">GitHub
                                 Calendar</a> widget.
 
-                            <div id="github-graph" class="github-graph">
+                        <div id="github-graph" class="github-graph">
 
-                            </div>
-                            <!--//github-graph-->
+                        </div>
+                        <!--//github-graph-->
 
-                            <p>You can also embed your GitHub activities using Casey Scarborough's <a
-                                    href="http://caseyscarborough.com/projects/github-activity/" target="_blank">GitHub
-                                    Activity Stream</a> widget.
-                                <!--//Usage: http://caseyscarborough.com/projects/github-activity/ -->
-                                <div id="ghfeed" class="ghfeed">
-                                </div>
-                                <!--//ghfeed-->
+                        <p>You can also embed your GitHub activities using Casey Scarborough's <a
+                                href="http://caseyscarborough.com/projects/github-activity/" target="_blank">GitHub
+                                Activity Stream</a> widget.
+                            <!--//Usage: http://caseyscarborough.com/projects/github-activity/ -->
+                        <div id="ghfeed" class="ghfeed">
+                        </div>
+                        <!--//ghfeed-->
 
                     </div>
                     <!--//secton-inner-->
@@ -526,12 +529,14 @@
     <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5D4H6M6GKR"></script>
     <script>
-        $(document).ready(function () {
-            $('body').find(
-                'img[src$="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"]'
-            ).parent().closest('a').closest('div').remove();
-        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5D4H6M6GKR');
     </script>
 </body>
 
