@@ -1,0 +1,2024 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vinay Joshi - Freelance Technology Consultant portfolio with .NET, microservices, cloud, and full-stack expertise."
+    />
+    <title>Vinay Joshi | Freelance Consultant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7fbfc;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --muted: #516174;
+        --line: #dbe8ee;
+        --accent: #0ea5a4;
+        --accent-2: #f59e0b;
+        --navy: #0b1220;
+        --shadow: 0 10px 28px rgba(11, 18, 32, 0.08);
+        --radius-lg: 22px;
+        --radius-md: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 8% -8%, #d4fff8 0%, transparent 36%),
+          radial-gradient(circle at 90% 6%, #fff0cf 0%, transparent 30%),
+          var(--bg);
+        line-height: 1.55;
+      }
+
+      .container {
+        width: min(1100px, 92vw);
+        margin-inline: auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(247, 251, 252, 0.88);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 72px;
+      }
+
+      .brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.2rem;
+        font-size: 0.95rem;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      section {
+        padding: 84px 0;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2.5rem;
+        align-items: center;
+        min-height: calc(100vh - 72px);
+        padding-top: 32px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #dcfdf7;
+        color: #0f766e;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 1rem 0 0.8rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.2rem, 5vw, 4.2rem);
+        line-height: 1.07;
+      }
+
+      .hero p {
+        font-size: 1.12rem;
+        color: var(--muted);
+        max-width: 60ch;
+      }
+
+      .cta-row {
+        margin-top: 1.7rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 180ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .btn-outline {
+        border: 1px solid var(--line);
+        color: var(--navy);
+        background: #fff;
+      }
+
+      .hero-card {
+        background: var(--surface);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        border: 1px solid #eef4f7;
+      }
+
+      .profile-photo {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 14px;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid #e7eff3;
+      }
+
+      .photo-wrap {
+        position: relative;
+      }
+
+      .profile-stamp {
+        position: absolute;
+        right: -10px;
+        bottom: 14px;
+        width: 132px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #c9d9e3;
+        border-radius: 12px;
+        padding: 6px;
+        transform: rotate(-11deg);
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.24);
+      }
+
+      .profile-stamp img {
+        width: 100%;
+        display: block;
+        opacity: 0.98;
+        border-radius: 8px;
+      }
+
+      .meta {
+        margin-top: 14px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .meta div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .meta strong {
+        color: var(--text);
+      }
+
+      .section-head {
+        margin-bottom: 1.6rem;
+      }
+
+      .section-head h2 {
+        font-family: "Space Grotesk", sans-serif;
+        margin: 0 0 0.4rem;
+        font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .stats-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .stat {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 22px;
+      }
+
+      .stat .num {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--navy);
+      }
+
+      .stat .label {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .projects {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .project-card h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.1rem;
+      }
+
+      .project-card p {
+        color: var(--muted);
+        margin: 0 0 0.9rem;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .chip {
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #eff8f8;
+        color: #0f766e;
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 44px;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background: linear-gradient(to bottom, #99f6e4, #e2e8f0);
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .company-logo {
+        width: 74px;
+        height: 74px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: #ffffff;
+        box-shadow: var(--shadow);
+        display: grid;
+        place-items: center;
+        z-index: 1;
+      }
+
+      .company-logo img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+      }
+
+      .company-logo-dark {
+        background: #10101b;
+        border-color: #1f2636;
+      }
+
+      .company-logo-dark img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .company-logo-text {
+        font-weight: 800;
+        color: #0b1220;
+        letter-spacing: 0.04em;
+      }
+
+      .timeline-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 16px 18px;
+      }
+
+      .timeline-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0.55rem;
+      }
+
+      .timeline-head h3 {
+        margin: 0;
+        font-size: 1.04rem;
+      }
+
+      .timeline-date {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #0f766e;
+        background: #ecfdf5;
+        border-radius: 999px;
+        padding: 5px 10px;
+      }
+
+      .timeline-company {
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0 0 0.55rem;
+      }
+
+      .timeline-points {
+        margin: 0;
+        padding-left: 1.05rem;
+        color: var(--muted);
+      }
+
+      .timeline-points li {
+        margin-bottom: 0.35rem;
+      }
+
+      .experience-links {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+
+      .experience-links a {
+        text-decoration: none;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 12px;
+        color: #0b1220;
+        font-weight: 700;
+        background: #fff;
+      }
+
+      .skills {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .skill-box {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 18px;
+      }
+
+      .skill-box h3 {
+        margin: 0;
+      }
+
+      .skill-title {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .skill-title img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.38rem;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid #d9e4ea;
+        background: #f8fcff;
+        font-size: 0.77rem;
+        font-weight: 700;
+        color: #1f2937;
+      }
+
+      .skill-pill img {
+        width: 15px;
+        height: 15px;
+        object-fit: contain;
+      }
+
+      .skill-glyph {
+        display: inline-grid;
+        place-items: center;
+        min-width: 15px;
+        height: 15px;
+        padding: 0 3px;
+        border-radius: 50%;
+        background: #dff4f0;
+        color: #0f766e;
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .quote-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cert-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cert-card {
+        background: #f8fafc;
+        border: 1px solid #d6e1e8;
+        border-radius: 18px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+
+      .cert-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid #dce7ee;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+      }
+
+      .cert-icon img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+      }
+
+      .cert-card h3 {
+        margin: 0 0 0.18rem;
+        font-size: 1.15rem;
+      }
+
+      .cert-card p {
+        margin: 0;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .cert-card.togaf-cert .cert-icon {
+        width: 88px;
+        height: 88px;
+      }
+
+      .cert-card.togaf-cert .cert-icon img {
+        width: 78px;
+        height: 78px;
+      }
+
+      .cert-link {
+        margin-top: 0.55rem;
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 6px 10px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: #0b1220;
+        background: #fff;
+      }
+
+      blockquote {
+        margin: 0;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: var(--radius-md);
+        padding: 20px;
+      }
+
+      blockquote p {
+        margin: 0 0 0.8rem;
+      }
+
+      blockquote cite {
+        color: #a8b4c7;
+        font-style: normal;
+        font-size: 0.92rem;
+      }
+
+      .contact {
+        background: linear-gradient(130deg, #0f172a, #1e293b);
+        color: #f1f5f9;
+        border-radius: var(--radius-lg);
+        padding: 34px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .contact p {
+        margin: 0.4rem 0 0;
+        color: #cbd5e1;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .contact-links a {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 500ms ease,
+          transform 500ms ease;
+      }
+
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        padding: 26px 0 42px;
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding-top: 24px;
+        }
+
+        .stats-grid,
+        .projects,
+        .skills,
+        .quote-grid,
+        .cert-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profile-stamp {
+          width: 110px;
+          right: -8px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          height: 64px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        section {
+          padding: 68px 0;
+        }
+
+        .timeline::before {
+          left: 36px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 58px 1fr;
+        }
+
+        .company-logo {
+          width: 58px;
+          height: 58px;
+          border-radius: 14px;
+        }
+
+        .company-logo img {
+          width: 35px;
+          height: 35px;
+        }
+
+        .stats-grid,
+        .projects,
+        .skills,
+        .quote-grid,
+        .cert-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-stamp {
+          width: 96px;
+          right: -6px;
+          bottom: 12px;
+        }
+
+        .contact {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">vinay<span>.</span>joshi</div>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#agentic-ai">Agentic AI</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="container hero">
+        <div class="fade-in">
+          <span class="eyebrow">Freelance Technology Consultant</span>
+          <h1>
+            Building AI-powered digital products<br />
+            with agentic workflows, .NET microservices, and cloud-native
+            architecture.
+          </h1>
+          <p>
+            I am Vinay Joshi, a software engineer with 13+ years of experience
+            in architecture, design, and delivery of enterprise applications
+            across healthcare, retail, and e-commerce domains. I currently work
+            as an independent freelance consultant.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-card fade-in" aria-label="Profile summary">
+          <div class="photo-wrap">
+            <img
+              class="profile-photo"
+              src="./assets/profile-1024.png"
+              alt="Portrait of Vinay Joshi"
+              loading="lazy"
+            />
+            <div
+              class="profile-stamp"
+              aria-label="TOGAF Certified EA Practitioner badge"
+            >
+              <img
+                src="https://secure.ealearning.com/content/img/TOGAF%20EA%20P%20Badge.png"
+                alt="TOGAF Certified EA Practitioner"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="meta">
+            <div>
+              <span>Location</span><strong>Greater Noida, India</strong>
+            </div>
+            <div><span>Experience</span><strong>13+ Years</strong></div>
+            <div>
+              <span>Specialty</span
+              ><strong>Freelance Consulting, .NET, Cloud</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="container fade-in">
+        <div class="section-head">
+          <h2>Impact Snapshot</h2>
+          <p>
+            Short metrics that show delivery, ownership, and technical outcomes.
+          </p>
+        </div>
+        <div class="stats-grid">
+          <article class="stat">
+            <div class="num">13+</div>
+            <div class="label">Years in software engineering</div>
+          </article>
+          <article class="stat">
+            <div class="num">6+</div>
+            <div class="label">Major organizations served</div>
+          </article>
+          <article class="stat">
+            <div class="num">10+</div>
+            <div class="label">Enterprise products delivered</div>
+          </article>
+          <article class="stat">
+            <div class="num">TOGAF</div>
+            <div class="label">Certified EA Practitioner</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="container fade-in">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p>Focused case studies with stack and real outcomes.</p>
+        </div>
+        <div class="projects">
+          <article class="project-card">
+            <h3>MTO (Made To Order)</h3>
+            <p>
+              Food ordering platform with Kiosk, KDS, and Order Status apps for
+              in-store operations, designed for scalable retail workflows.
+            </p>
+            <div class="chip-row">
+              <span class="chip">ASP.NET Core</span>
+              <span class="chip">React Native</span>
+              <span class="chip">Azure DevOps</span>
+              <span class="chip">Bicep</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Simbe</h3>
+            <p>
+              Store automation solution integrating robotic shelf intelligence
+              to detect stock and pricing anomalies across retail environments.
+            </p>
+            <div class="chip-row">
+              <span class="chip">.NET Core</span>
+              <span class="chip">React</span>
+              <span class="chip">DevExpress</span>
+              <span class="chip">Azure App Service</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Digital Benefit Data</h3>
+            <p>
+              Automated vendor document generation for employee benefits at
+              enterprise scale, minimizing manual effort and turnaround time.
+            </p>
+            <div class="chip-row">
+              <span class="chip">.NET</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Angular</span>
+              <span class="chip">OpenShift</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="container fade-in">
+        <div class="section-head">
+          <h2>Experience Timeline</h2>
+          <p>
+            Career progression with current independent consulting and prior
+            enterprise product delivery.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="company-logo" aria-label="Freelance Consultant">
+              <span class="company-logo-text">FC</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Freelance Technology Consultant</h3>
+                <span class="timeline-date">2021 - Present</span>
+              </div>
+              <p class="timeline-company">Independent Consultant</p>
+              <ul class="timeline-points">
+                <li>
+                  Consulting with clients on .NET microservices, API
+                  architecture, and cloud modernization.
+                </li>
+                <li>
+                  Delivering full-stack solutions, performance improvements, and
+                  DevOps automation.
+                </li>
+                <li>
+                  Supporting product teams with architecture guidance,
+                  troubleshooting, and release strategy.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="company-logo" aria-label="Optum logo">
+              <img
+                src="https://www.optum.in/content/dam/optum4/images/logos/optum-logo-ora-rgb1.svg"
+                alt="Optum"
+                loading="lazy"
+              />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Senior Software Engineer</h3>
+                <span class="timeline-date">2018 - 2021</span>
+              </div>
+              <p class="timeline-company">
+                Optum Global Solutions (UnitedHealth Group)
+              </p>
+              <ul class="timeline-points">
+                <li>
+                  Delivered benefit and policy automation platforms with
+                  enterprise-grade reliability.
+                </li>
+                <li>
+                  Worked across .NET Core, Node.js, Angular, SQL Server,
+                  MongoDB, and OpenShift.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="company-logo" aria-label="Publicis Sapient logo">
+              <img
+                src="https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/afaqs/media/post_attachments/b5ef67c0f3f8ec0f3c390bde34f8aef435814b2baf06a4b7481930796593c6ed.jpg"
+                alt="Publicis Sapient"
+                loading="lazy"
+              />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Senior Associate Technology</h3>
+                <span class="timeline-date">2014 - 2018</span>
+              </div>
+              <p class="timeline-company">Sapient Consulting</p>
+              <ul class="timeline-points">
+                <li>
+                  Built enterprise web applications in .NET, MVC, C#, Oracle,
+                  and SQL Server ecosystems.
+                </li>
+                <li>
+                  Contributed to product modules such as bonus allocation and
+                  project management solutions.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div
+              class="company-logo"
+              aria-label="Next Gen Invent Corporation logo"
+            >
+              <span class="company-logo-text">NGI</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Senior Software Engineer</h3>
+                <span class="timeline-date">2011 - 2014</span>
+              </div>
+              <p class="timeline-company">Next Gen Invent Corporation</p>
+              <ul class="timeline-points">
+                <li>
+                  Developed inventory, warehouse, and home delivery tools using
+                  .NET and SQL technologies.
+                </li>
+                <li>
+                  Worked on WCF-based enterprise integrations and early
+                  mobility-enabled systems.
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="experience-links">
+          <a
+            href="https://www.linkedin.com/in/joshi-vinay/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn Profile</a
+          >
+          <a
+            href="https://github.com/vinay01joshi"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub Profile</a
+          >
+        </div>
+      </section>
+
+      <section id="skills" class="container fade-in">
+        <div class="section-head">
+          <h2>Skills & Technologies</h2>
+          <p>Grouped by specialization for faster scanning.</p>
+        </div>
+        <div class="skills">
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="Frontend icon"
+                loading="lazy"
+              />
+              <h3>FrontEnd</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  alt="React"
+                  loading="lazy"
+                />React</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  alt="React Native"
+                  loading="lazy"
+                />React Native</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                  alt="Angular"
+                  loading="lazy"
+                />Angular</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                  alt="Bootstrap"
+                  loading="lazy"
+                />Bootstrap</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+                  alt="MUI"
+                  loading="lazy"
+                />MUI</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">R</span>Redux</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">M</span>Mobx</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">A</span>Ant Design</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                alt="Languages icon"
+                loading="lazy"
+              />
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                  alt="C#"
+                  loading="lazy"
+                />C#</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                  loading="lazy"
+                />JavaScript</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript"
+                  loading="lazy"
+                />TypeScript</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  loading="lazy"
+                />Python</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                alt="Backend icon"
+                loading="lazy"
+              />
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                  alt=".Net Core"
+                  loading="lazy"
+                />.Net Core</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js"
+                  loading="lazy"
+                />Node.js</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                  alt="ASP.Net"
+                  loading="lazy"
+                />ASP.Net</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                  alt="MVC"
+                  loading="lazy"
+                />MVC</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">W</span>WCF</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                  alt="Lambda Function"
+                  loading="lazy"
+                />Lambda Function</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                  alt="Azure Logic Apps"
+                  loading="lazy"
+                />Azure Logic Apps</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                  alt="Azure Function Apps"
+                  loading="lazy"
+                />Azure Function Apps</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                alt="Database icon"
+                loading="lazy"
+              />
+              <h3>Database</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                  alt="SQL Server"
+                  loading="lazy"
+                />SQL Server</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="Postgress"
+                  loading="lazy"
+                />Postgress</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="Mongo Db"
+                  loading="lazy"
+                />Mongo Db</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                  alt="Azure Service Bus"
+                  loading="lazy"
+                />Azure Service Bus</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">R</span>RabbitMq</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                alt="Cloud DevOps icon"
+                loading="lazy"
+              />
+              <h3>Cloud DevOps</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                  alt="Azure"
+                  loading="lazy"
+                />Azure</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                  alt="AWS"
+                  loading="lazy"
+                />AWS</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                  alt="GCP"
+                  loading="lazy"
+                />GCP</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg"
+                  alt="Openshfit"
+                  loading="lazy"
+                />Openshfit</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                  alt="Kubernates"
+                  loading="lazy"
+                />Kubernates</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg"
+                  alt="Terraform"
+                  loading="lazy"
+                />Terraform</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">B</span>Bicep</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">P</span>Pulumi</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Tools icon"
+                loading="lazy"
+              />
+              <h3>Tools</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  loading="lazy"
+                />Git</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">E</span>Elastic Search</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">O</span>OpenSearch</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">X</span>Xunit</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">J</span>Jest</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">V</span>ViTest</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                  alt="Vs Code"
+                  loading="lazy"
+                />Vs Code</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
+                  alt="Visual Studio"
+                  loading="lazy"
+                />Visual Studio</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"
+                alt="Architecture icon"
+                loading="lazy"
+              />
+              <h3>Architecture</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                  alt="Microservices"
+                  loading="lazy"
+                />Microservices</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="./assets/icons/togaf-mark.svg"
+                  alt="TOGAF"
+                  loading="lazy"
+                />TOGAF</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">S</span>SaaS</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">P</span>PubSub</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">D</span>DLQ's</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-plain.svg"
+                alt="Methodologies icon"
+                loading="lazy"
+              />
+              <h3>Methodologies</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><span class="skill-glyph">A</span>Agile</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">S</span>Scrum</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-plain.svg"
+                  alt="CI/CD"
+                  loading="lazy"
+                />CI/CD</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">T</span>TDD</span
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="agentic-ai" class="container fade-in">
+        <div class="section-head">
+          <h2>Agentic AI & MCP</h2>
+          <p>
+            AI engineering capabilities used during real-world project
+            development.
+          </p>
+        </div>
+        <div class="skills">
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="AI-assisted development icon"
+                loading="lazy"
+              />
+              <h3>AI-Assisted Development</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Prompt Engineering"
+                  loading="lazy"
+                />Prompt Engineering</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">P</span>AI Pair Programming</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">R</span>AI Refactoring</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">T</span>Test Generation</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
+                alt="Agentic engineering icon"
+                loading="lazy"
+              />
+              <h3>Agentic Engineering</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><span class="skill-glyph">A</span>Task Planning Agents</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">T</span>Tool Calling</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">W</span>Workflow Orchestration</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">H</span>Human-in-the-Loop</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="MCP icon"
+                loading="lazy"
+              />
+              <h3>MCP Integration</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><span class="skill-glyph">M</span>Model Context Protocol</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">C</span>MCP Client Integration</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">S</span>MCP Server Tooling</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">G</span>Git/Docs/DB Connectors</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="LLM stack icon"
+                loading="lazy"
+              />
+              <h3>LLM Stack & RAG</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="LangChain"
+                  loading="lazy"
+                />LangChain</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">L</span>LlamaIndex</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">R</span>RAG Pipelines</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="pgvector"
+                  loading="lazy"
+                />pgvector</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-plain.svg"
+                alt="AI quality icon"
+                loading="lazy"
+              />
+              <h3>AI Quality & Safety</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><span class="skill-glyph">E</span>LLM Evaluations</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">G</span>Guardrails</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">P</span>Prompt Injection
+                Defense</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">C</span>Cost & Token Monitoring</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                alt="AI backend icon"
+                loading="lazy"
+              />
+              <h3>AI App Delivery</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                  alt="FastAPI"
+                  loading="lazy"
+                />FastAPI</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  alt="Docker"
+                  loading="lazy"
+                />Dockerized Inference</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                  alt="Kubernetes"
+                  loading="lazy"
+                />Kubernetes Deployments</span
+              >
+              <span class="skill-pill"
+                ><span class="skill-glyph">O</span>Observability</span
+              >
+            </div>
+          </article>
+
+          <article class="skill-box">
+            <div class="skill-title">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                alt="AI tools icon"
+                loading="lazy"
+              />
+              <h3>AI Tools & Platforms</h3>
+            </div>
+            <div class="skill-items">
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=antigravity.dev"
+                  alt="Antigravity icon"
+                  loading="lazy"
+                />Antigravity</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=openclaw.ai"
+                  alt="OpenClaw icon"
+                  loading="lazy"
+                />OpenClaw</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=openai.com"
+                  alt="OpenAI Codex icon"
+                  loading="lazy"
+                />OpenAI Codex</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=ollama.com"
+                  alt="Ollama icon"
+                  loading="lazy"
+                />Ollama</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=lmstudio.ai"
+                  alt="LM Studio icon"
+                  loading="lazy"
+                />LM Studio</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=comfyui.org"
+                  alt="ComfyUI icon"
+                  loading="lazy"
+                />ComfyUI</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=cline.bot"
+                  alt="Cline icon"
+                  loading="lazy"
+                />Cline</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=cursor.com"
+                  alt="Cursor icon"
+                  loading="lazy"
+                />Cursor</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=langfuse.com"
+                  alt="Langfuse icon"
+                  loading="lazy"
+                />Langfuse</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=smith.langchain.com"
+                  alt="LangSmith icon"
+                  loading="lazy"
+                />LangSmith</span
+              >
+              <span class="skill-pill"
+                ><img
+                  src="https://www.google.com/s2/favicons?sz=64&domain=n8n.io"
+                  alt="n8n icon"
+                  loading="lazy"
+                />n8n</span
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="certifications" class="container fade-in">
+        <div class="section-head">
+          <h2>Certifications</h2>
+          <p>Professional credentials and continuous learning milestones.</p>
+        </div>
+        <div class="cert-grid">
+          <article class="cert-card togaf-cert">
+            <div class="cert-icon">
+              <img
+                src="https://secure.ealearning.com/content/img/TOGAF%20EA%20P%20Badge.png"
+                alt="TOGAF icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>TOGAF</h3>
+              <p>Certified EA Practitioner</p>
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Google certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Google IT Automation with Python Specialization</h3>
+              <p>Google • Issued May 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/specialization/8DV8DVH4VZLK"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                alt="Google Cloud certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Machine Learning for Trading Specialization</h3>
+              <p>
+                Google Cloud, New York Institute of Finance • Issued Feb 2020
+              </p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/specialization/UQ2WG3T23P92"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Machine learning certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Machine Learning</h3>
+              <p>Stanford University • Issued Mar 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/UZ8R97VLYHXY"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Google certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Troubleshooting and Debugging Techniques</h3>
+              <p>Google • Issued Apr 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/2BCGFBQRZ3KZ"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                alt="GitHub certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Introduction to Git and GitHub</h3>
+              <p>Google • Issued Apr 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/73ST645Y65X6"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                alt="Trading ML GCP certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Introduction to Trading, Machine Learning &amp; GCP</h3>
+              <p>
+                Google Cloud, New York Institute of Finance • Issued Jan 2020
+              </p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/D9385BTVRQKG"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Using Python to Interact with the Operating System</h3>
+              <p>Google • Issued Apr 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/J75WWSJQR7WN"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                alt="Reinforcement learning certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Reinforcement Learning for Trading Strategies</h3>
+              <p>
+                New York Institute of Finance, Google Cloud • Issued Feb 2020
+              </p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/ST8VAU9CYN8M"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Google certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Configuration Management and the Cloud</h3>
+              <p>Google • Issued Apr 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/8KUBCWJPDN7Z"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Crash Course on Python</h3>
+              <p>Google • Issued Mar 2020</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/records/Z722PWBRDQP5"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Coursera Verified Certificate (26JQPM9CQX7H)</h3>
+              <p>Coursera • Date not specified</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/verify/26JQPM9CQX7H"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+          <article class="cert-card">
+            <div class="cert-icon">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Certificate icon"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h3>Coursera Verified Certificate (MRFULUHA4JSH)</h3>
+              <p>Coursera • Date not specified</p>
+              <a
+                class="cert-link"
+                href="https://www.coursera.org/account/accomplishments/verify/MRFULUHA4JSH"
+                target="_blank"
+                rel="noreferrer"
+                >View Credential</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container fade-in">
+        <div class="section-head">
+          <h2>Testimonials</h2>
+          <p>Feedback from collaborators and stakeholders.</p>
+        </div>
+        <div class="quote-grid">
+          <blockquote>
+            <p>
+              Vinay brings rare clarity to complex delivery problems. He
+              combines deep technical ability with pragmatic execution.
+            </p>
+            <cite>Engineering Manager</cite>
+          </blockquote>
+          <blockquote>
+            <p>
+              Consistently dependable, detail-oriented, and outcome-focused. A
+              key contributor in every major release cycle.
+            </p>
+            <cite>Product Lead</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="contact" class="container fade-in">
+        <div class="contact">
+          <div>
+            <h2>Let's build something useful.</h2>
+            <p>
+              Open to freelance consulting projects and architecture-focused
+              collaborations.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:vinay01joshi@gmail.com">Email</a>
+            <a
+              href="https://www.linkedin.com/in/joshi-vinay/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/vinay01joshi"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="./assets/Vinay-Joshi-Resume.docx"
+              target="_blank"
+              rel="noreferrer"
+              >Resume</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Vinay Joshi. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5D4H6M6GKR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5D4H6M6GKR");
+    </script>
+  </body>
+</html>
